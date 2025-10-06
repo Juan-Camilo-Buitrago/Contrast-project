@@ -1,88 +1,170 @@
-/* General Reset and Base Styles */
-body {
-  font-family: 'Georgia', serif;
+/* ======== RESET Y BASE ======== */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #c9fda9;
-  color: #222;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top left, #0b0c10, #10121a 80%);
+  color: #e3e3e3;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ======== CONTENEDOR ======== */
 .wrap {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 850px;
+  margin: auto;
+  padding: 2rem 1.5rem;
 }
 
-/* Header Styles */
+/* ======== CABECERA ======== */
 .site-header {
-  background-color: #689a59;
-  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   padding: 2rem 0;
   text-align: center;
+  background: linear-gradient(135deg, #0d0f18 0%, #111322 100%);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
 }
 
 .site-title {
-  font-size: 2.5rem; /* Contrast of Size */
-  font-weight: 700;   /* Contrast of Weight */
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffe5, #00a2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .site-subtitle {
-  font-style: italic; /* Contrast of Form */
-  font-weight: 300;
+  color: #9ea9b7;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Article Styles */
+/* ======== TEXTO PRINCIPAL ======== */
+.post p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #d9d9d9;
+}
+
+.post a {
+  color: #00e0ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.post a:hover {
+  color: #80ffff;
+}
+
 .post h2, .post h3 {
-  margin-top: 2rem;
-  font-family: 'Helvetica Neue', sans-serif; /* Contrast of Structure */
-  font-weight: bold;
-  color: #51983b; /* Contrast of Color */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  color: #00ffe5;
+  margin: 2rem 0 0.8rem 0;
+  position: relative;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.post h2 {
-  font-size: 1.8rem;
-  border-bottom: 2px solid #689a59;
+.post h2::after, .post h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffe5, transparent);
+  margin-top: 6px;
+  border-radius: 3px;
 }
 
-.post h3 {
-  font-size: 1.4rem;
-  text-decoration: underline;
-}
-
-blockquote {
-  font-style: italic;
-  background-color: #fce262;
-  padding: 1rem;
-  border-left: 5px solid #689a59;
+/* ======== LISTAS ======== */
+.principles {
+  list-style: none;
+  padding-left: 0;
   margin: 1.5rem 0;
 }
 
-/* List of Principles */
-.principles {
-  list-style: square;
-  padding-left: 1.5rem;
-  font-family: 'Arial', sans-serif; /* Changed from Courier New to Arial */
-  background-color: #fce262;
-  padding: 1rem;
-  border-radius: 5px;
+.principles li {
+  font-family: 'Inter', sans-serif;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #00aaff;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
-/* Directional Contrast */
-.principles li:nth-child(7) {
-  transform:  /* Contrast of Direction */
-  display: inline-block;
+.principles li:hover {
+  background: rgba(0, 170, 255, 0.08);
+  transform: translateX(4px);
 }
 
-/* Isolation Contrast */
+/* ======== BLOQUES DE CITA ======== */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #00ffe5;
+  background: rgba(255, 255, 255, 0.05);
+  font-style: italic;
+  color: #bfc7d4;
+  border-radius: 6px;
+}
 
-
-/* Footer Styles */
-.site-footer {
-  background-color: #5b0000;
-  color: #689a59;
-  text-align: center;
-  padding: 1rem 0;
+/* ======== PIE DE ARTÍCULO ======== */
+.article-footer {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
   font-size: 0.9rem;
+  color: #7b8391;
+  text-align: center;
+}
+
+/* ======== PIE DE PÁGINA ======== */
+.site-footer {
+  text-align: center;
+  color: #8b94a6;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: #0c0d14;
+}
+
+/* ======== INTERACTIVOS Y ANIMACIONES ======== */
+a, .principles li {
+  transition: all 0.3s ease;
+}
+
+h2, h3 {
+  transition: color 0.3s ease;
+}
+
+h2:hover, h3:hover {
+  color: #80ffff;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  .wrap {
+    padding: 1.5rem;
+  }
+  .site-title {
+    font-size: 2rem;
+  }
 }
